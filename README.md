@@ -1,4 +1,9 @@
-<h1 align="center">LSTM-for-Sentiment-Analysis</h1>
+<h1 align="center">Deploy-PyTorch-Model-using-SageMaker</h1>
+
+If you want to see a preview of the app UI, you can wait for the gif to load: 
+
+![UI-demo](https://user-images.githubusercontent.com/68460816/175981299-56f57c11-0ca1-4b6a-bab0-86ef550479d0.gif)
+
 
 ## About the project
 
