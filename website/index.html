@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Sentiment Analysis Web App</title>
+        <meta charset="utf-8">
+        <meta name="viewport"  content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300&display=swap" rel="stylesheet">
+        <style type="text/css">
+            body{
+    background-image: url('./gifs/neuron.gif');
+    background-size: contain;
+
+
+    text-align: center;
+    color: white;
+    height: 100vh;
+    padding:0;
+    margin:0;
+
+ backdrop-filter: blur(20px);
+backdrop-filter: brightness(60%);
+font-family: 'Barlow', sans-serif;
+font-size: 1.7rem;
+
+}
+        </style>
+        <script>
+         "use strict";
+         function submitForm(oFormElement) {
+             var xhr = new XMLHttpRequest();
+             xhr.onload = function() {
+                 var result = parseFloat(xhr.responseText);
+                 var resultElement = document.getElementById('result');
+                 if (result == 0) {
+
+
+                     resultElement.style = 'background-color:rgba(255, 0, 0, 0.6); padding:1.5rem;  border-bottom-left-radius: 50% 20px;  border-bottom-right-radius: 50% 20px;';
+                     resultElement.innerHTML = 'Your review was NEGATIVE!';
+
+                 } else {
+                     resultElement.style = 'background-color:rgba(0, 255, 0, 0.3); padding:1.5rem; border-bottom-left-radius: 50% 20px;  border-bottom-right-radius: 50% 20px;';
+                     resultElement.innerHTML = 'Your review was POSITIVE!';
+                 }
+             }
+             xhr.open (oFormElement.method, oFormElement.action, true);
+             var review = document.getElementById('review');
+             xhr.send (review.value);
+             return false;
+         }
+        </script>
+
+    </head>
+    <body>
+
+        <div class="col-md-6 col-md-offset-3" style="margin-top: 20vh;">
+            <h1>Is this review positive or negative?</h1>
+            <p>Enter your review below and click submit to find out...</p>
+            <form method="POST"
+                  action="**REPLACE WITH PUBLIC API URL**"
+                  onsubmit="return submitForm(this);" >                     <!-- HERE IS WHERE YOU NEED TO ENTER THE API URL -->
+                <div class="form-group">
+                    <label for="review">Review:</label>
+                    <textarea class="form-control"  rows="5" id="review" placeholder="Please write your review here..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg btn-block ">Submit</button>
+            </form>
+            <h2 class="bg-success rounded" id="result"></h2>
+
+        </div>
+        <div class="col-md-6 col-md-offset-3" style="margin-top: 20vh;">
+            <p>Developed by Saleh Sargolzaei</p>
+
+        </div>
+
+    </body>
+</html>
