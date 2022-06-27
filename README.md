@@ -4,6 +4,9 @@ If you want to see a preview of the app UI, you can wait for the gif to load:
 
 ![UI-demo](https://user-images.githubusercontent.com/68460816/175981299-56f57c11-0ca1-4b6a-bab0-86ef550479d0.gif)
 
+## Demo
+
+You can watch the final demo on my linkedin post : [click here](https://www.linkedin.com/posts/saleh-sargolzaee_aws-sagemaker-demo-activity-6947228345784778753-jqnP?utm_source=linkedin_share&utm_medium=member_desktop_web).
 
 ## About the project
 
